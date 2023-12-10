@@ -1,0 +1,205 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANDING PAGE</title>
+    <style>
+      *{
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body{
+        color: white;
+        background-image: linear-gradient(to right,rgba(6, 10, 10, 0.799), rgba(28,70,184,0.8)),url(https://imgs.search.brave.com/1GiHgF90DyhGpRCwpTjQZlbE6LrxYHV9A8aEBjGzUVU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93MC5w/ZWFrcHguY29tL3dh/bGxwYXBlci84NTEv/NDE4L0hELXdhbGxw/YXBlci1reXV1Ymkt/bmluZS10YWlsZWQt/Zm94LWdsb3ctbmlu/ZS11enVtYWtpLW5h/cnV0by10YWlscy1l/YXJzLXBvd2VyLWRl/bW9uLWZvdy1reXV1/YmktZmFuZ3MtY2hh/a3JhLWNyZWF0dXJl/LmpwZw);
+        background-size: cover;
+        font-family: 'Times New Roman', sans-serif;
+        background-attachment: fixed;
+      }
+      nav .logo{
+        font-size: 30px;
+        font-weight: 700;
+      }
+      nav{
+        width: 100%;
+        height: 80px;
+        justify-content: space-between;
+        padding: 40px 6%;
+        display: flex;
+      }
+      nav ul{
+        display: flex;
+        list-style: none;
+      }
+      nav ul li{
+        padding: 8px 15px;
+        border-radius: 10px;
+        transition: 0.2s ease-in;
+      }
+      nav ul li a{
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      nav .navlinks button{
+        padding: 2px 20px;
+        border-radius: 10px;
+        color: blue;
+        font-size: 16px;
+        border-style: none;
+        font-weight: 700;
+        margin-left: 10px;
+      }
+      nav ul li:hover{
+        background-color: rgb(44,1,197);
+      }
+      nav .menubutton{
+        font-size: 30px;
+        font-weight: bolder;
+        cursor: pointer;
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        nav .menubutton{
+          display: flex;
+        }
+        nav .navlinks{
+          display: none;
+        }
+        .sideNav {
+          display: block !important;
+        }
+      }
+      .sideNav{
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0%;
+        background-color: rgb(44, 1, 197);
+        overflow-x: hidden;
+        transition: 0.3s ease-in;
+        padding-top: 60px;
+        display: none;
+      }
+      .sideNav a{
+        padding: 8px 8px 8px 40px;
+        display: block;
+        font-size: 25px;
+        font-weight: 500;
+        color: #d1d1d1;
+        transition: 0.3s;
+        text-decoration: none;
+      }
+      .sideNav a button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: blue;
+        font-size: 16px;
+        border-style: none;
+        font-weight: 700;
+      }
+      .sideNav a:hover{
+        color: white;
+      }
+      .sideNav .closeButton{
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 20px;
+        margin-left: 50px;
+      }  
+      .r1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2% 5%;
+      }
+      .r1 .col1 {
+        padding-right: 50px;
+      }
+      .col1 h1 {
+        font-size: 60px;
+        margin-bottom: 10px;
+      }
+      .col1 p {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      /* Header content responsive */
+      @media screen and (max-width: 980px) {
+        .col2 img {
+          width: 380px;
+          border: solid black;
+        }
+        .col1 h1 {
+          font-size: 60px;
+        }
+        .col1 p{
+          font-size: 27px;
+        }
+        .r1 {
+          margin-top: 50px;
+        }
+      }
+      @media screen and (max-width: 600px) {        
+        .col1 h1 {
+          font-size: 35px;
+        }
+        .r1 {
+          flex-direction: column;        
+        }
+        .r1 .col1 {
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">ANIME....</div>
+      <span class="menubutton">&#9776;</span><!--Unicode &#9776-->
+      <div class="navLinks">
+        <ul>
+          <li><a href="#" onclick="openPage('home.html')">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <button type="button">LOGIN</button>
+          <!--<link rel="stylesheet" href="menu.css">-->
+        </ul>
+      </div>
+    </nav>
+    <div class="sideNav" id="sidenav">
+      <a href="#" class="closeButton" onclick="closeNav()"> &#10006;</a>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#"><button type="button">Login</button> </a>
+    </div>
+    <!-- Header content and its banner image -->
+    <div class="r1">
+      <div class="col1">
+        <h1>Naruto Once Said</h1>
+        <p>“When people are protecting something truly special to them, they truly can become… as strong as they can be.” – Naruto Uzumaki</p>
+      </div>
+      <div class="col2">
+        <img src="https://imgs.search.brave.com/DwOhwKakIQ7Ru3GqYzMLC5DBIS0ZQTkntr249t8hOTk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vY3V0ZXdh/bGxwYXBlci5vcmcv/MjEvaGlkZGVuLWxl/YWYtdmlsbGFnZS13/YWxscGFwZXIvVGFr/ZS1BLUxvb2stQXQt/SGlkZGVuLUxlYWYt/VmlsbGFnZS1Bcy1O/YXJ1dG8tQmF0dGxl/cy1Hb24tSW4tLmpw/Zw" alt="banner" width="500px">
+      </div>
+    </div>
+    <!-- javascript for side menu to appear -->
+    <script>
+      function openNav() {
+        document.getElementById("sidenav").style.width = "50%";
+      }
+      function closeNav() {
+        document.getElementById("sidenav").style.width = "0%";
+      }
+      function openPage(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>
