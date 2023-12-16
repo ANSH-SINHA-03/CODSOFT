@@ -19,30 +19,37 @@
                 width: 100%;
                 height: 100vh;
                 background-image: url(https://t3.ftcdn.net/jpg/02/14/53/92/360_F_214539232_YnUrtuwUEt84gHuU0qG8l7OwZvH4rnPG.jpg);
-                background-size: cover;
-                background-position: right;
+                background-size: contain 100px;
+                background-position: center right;
+                background-repeat: no-repeat;
             }    
             .contain{
                 padding: 10PX 10%;   
             }
             nav{
                 display: flex;
-                align-items: center;
+                align-items: center left;
                 justify-content: space-between;
-                flex-wrap: wrap;
+                
+                position: fixed;
+                background-color: #000000;
             }
             .logo{
                 width: 150px;
+                position: left;
             }
             nav ul li{
                 display: inline-flex;
                 list-style: none;
                 margin: 15px 20px;
+                align-items: right;
+
+                
             }
             nav ul li a{
                 color: #fff;
                 text-decoration: none;
-                position: relative;
+                position:static;
                 font-size: 20px;
             }
             nav ul li a ::after{
@@ -55,7 +62,7 @@
                 transition: 1s;
                 bottom: -8px;
             }
-            nav ul li a:hover::after{
+            nav ul li a :hover ::after{
                 width: 100%;
             }
             .header-txt{
@@ -81,7 +88,7 @@
             }
             .about-col1 img{
                 width: 100%;
-                border-radius: 20px;
+                border-radius: 10px;
             }
             .about-col2{
                 flex-basis: 40%;
@@ -169,7 +176,7 @@
                 transform: translateY(-10px);
             }
             .resumebutton{
-                margin: 40px 50px 40px;
+                margin-left: 160px;
                 display: block;
                 font-size: 40px;
             }
@@ -234,9 +241,9 @@
         <div id="header">
             <div class="contain">
                 <nav>
-                    <img src="https://flamingtext.com/net-fu/proxy_form.cgi?imageoutput=true&script=alien-glow-anim-logo&text=ANSH&doScale=true&scaleWidth=240&scaleHeight=120" class="logo">
+                    <img src="https://flamingtext.com/net-fu/proxy_form.cgi?script=birdy-logo&text=ANSH&_loc=generate&imageoutput=true" class="logo">
                     <ul>
-                        <li><a href="#header">HOME</a></li>
+                        <li><a href="#header">HOME </a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#Project">PROJECT</a></li>
                         <li><a href="#Resume">RESUME</a></li>
@@ -245,7 +252,7 @@
                 </nav>
                 <div class="header-txt">
                     <p>WEB DEVELOPER</p>
-                    <H1>Hi, I'm Ansh Sinha<br> From India</H1>
+                    <H1>Hi, I'm <br> Ansh Sinha</H1>
                 </div>
             </div>
         </div>
@@ -290,7 +297,7 @@
                     <div>
                         <i class="fa-solid fa-hippo"></i>
                         <h2>HTML</h2>
-                        <p></p>
+                        
                         <a href="#">Learn more</a>
                     </div>
                     <div>
@@ -314,8 +321,8 @@
                 <h1 class="subtitle">RESUME</h1>
             </div>
             <div class="resumebutton">
-                <i class="fa-solid fa-download"></i>
-                <button onclick="downloadResume()">Download Resume</button>
+                <button onclick="downloadResume()">Download Resume <i class="fa-solid fa-download"></i></button>
+                
             </div>
         </div>
         <!---------CONTACT SECTION-->
