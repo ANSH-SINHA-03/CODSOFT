@@ -1,381 +1,426 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TASK-2 Portfolio</title>
-        <style>
-            *{
-                margin: 0;
-                font-family: 'Times New Roman', sans-serif;
-                box-sizing: border-box;
-                padding: 0;
-            }
-            body{
-                background: #000000;
-                color: #fff;
-            }
-            #header{
-                width: 100%;
-                height: 100vh;
-                background-image: url(https://t3.ftcdn.net/jpg/02/14/53/92/360_F_214539232_YnUrtuwUEt84gHuU0qG8l7OwZvH4rnPG.jpg);
-                background-size: contain 100px;
-                background-position: center right;
-                background-repeat: no-repeat;
-            }    
-            .contain{
-                padding: 10PX 10%;   
-            }
-            nav{
-                display: flex;
-                align-items: center left;
-                justify-content: space-between;
-                
-                position: fixed;
-                background-color: #000000;
-            }
-            .logo{
-                width: 150px;
-                position: left;
-            }
-            nav ul li{
-                display: inline-flex;
-                list-style: none;
-                margin: 15px 20px;
-                align-items: right;
 
-                
-            }
-            nav ul li a{
-                color: #fff;
-                text-decoration: none;
-                position:static;
-                font-size: 20px;
-            }
-            nav ul li a ::after{
-                content: '';
-                width: 0;
-                height: 5px;
-                background: #ff004f;
-                position: absolute;
-                left: 0;
-                transition: 1s;
-                bottom: -8px;
-            }
-            nav ul li a :hover ::after{
-                width: 100%;
-            }
-            .header-txt{
-                margin-top: 25%;
-                font-size: 30px;
-            }
-            .header-txt h1{
-                font-size: 65px;
-                margin-top: 25px;
-                color: #ff004f;
-            }
-            #about{
-                padding: 80px 0;
-                color: #bababa;
-            }
-            .rows{
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .about-col1{
-                flex-basis: 40%;
-            }
-            .about-col1 img{
-                width: 100%;
-                border-radius: 10px;
-            }
-            .about-col2{
-                flex-basis: 40%;
-            }
-            .subtitle{
-                font-size: 60px;
-                font-weight: 600;
-                color: white;
-            }
-            .skills-tab{
-                margin: 20px 0 40px;
-                display: flex;
-            }
-            .s-tab{
-                font-size: 20px;
-                margin-right: 60px;
-                font-weight: 500;
-                cursor: pointer;
-                position: relative;
-            }
-            .s-tab::after{
-                width: 0;
-                height: 3px;
-                content: '';
-                background: #ff004f;
-                position: absolute;
-                left: 0;
-                bottom: -8px;
-                transition: 0.5s;
-            }
-            .s-tab.s1-tab::after{
-                width: 60%;
-            }
-            .skill-contents ul li{
-                list-style: none;
-                margin: 15px 0;
-            }
-            .skill-contents ul li span{
-                color: #ff004f;
-                font-size: 15px;
-            }
-            .skill-contents{
-                display: none;
-            }
-            .skill-contents.active-tab{
-                display: block;
-            }
-            /* PROJECT SECTION */
-            #Project{
-                padding: 30px 0;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-2 Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: 'Times New Roman', sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+        }
 
-            }
-            .projects-list{
-                display: grid;
-                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-                grid-gap: 40px;
-                margin-top: 60px;
-            }
-            .projects-list div{
-                background: #252525;
-                padding: 40px;
-                font-size: 15px;
-                font-weight: 400;
-                border-radius: 15px;
-                transition: background 0.5s, transform 0.5s;
-            }
-            .projects-list div i{
-                font-size: 45px;
-                margin-bottom: 30px;
-            }
-            .projects-list div h2{
-                font-size: 30px;
-                font-weight: 450;
-                margin-bottom: 20px;
-            }
-            .projects-list div a{
-                text-decoration: none;
-                color: white;
-                font-size: 15px;
-                margin-top: 20px;
-                display: inline-block;
-            }
-            .projects-list div:hover{
-                background: #ff004f;
-                transform: translateY(-10px);
-            }
-            .resumebutton{
-                margin-left: 160px;
-                display: block;
-                font-size: 40px;
-            }
-            .resumebutton button{
-                background: #252525;
-                color: white;
-                padding: 40px;
-                font-size: 25px;
-                font-weight: 400;
-                border-radius: 15px;
-                transition: background 0.5s, transform 0.5s;
-            }
-            .resumebutton button:hover{
-                background: #4ac030d2;
-                transform: translateY(-10px);
-            }
-            /* CONTACT DETAILS*/
-            #Contact{
-                padding: 30px 0;
+        body {
+            background: #000000;
+            color: #fff;
+        }
 
-            }
-            .Contact-list{
-                display: grid;
-                margin-left: 40px;
-                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-                grid-gap: 40px;
-                margin-top: 60px;
-            }
-            .Contact-list div{
-                background: #252525;
-                padding: 20px;
-                font-size: 15px;
-                font-weight: 200;
-                border-radius: 15px;
-                transition: background 0.5s, transform 0.5s;
-            }
-            .Contact-list div i{
-                font-size: 45px;
-                margin-bottom: 30px;
-            }
-            .Contact-list div h2{
-                font-size: 30px;
-                font-weight: 450;
-                margin-bottom: 10px;
-            }
-            .Contact-list div a{
-                text-decoration: none;
-                color: white;
-                font-size: 15px;
-                margin-top: 20px;
-                display: inline-block;
-            }
-            .Contact-list div:hover{
-                background: #ff004f;
-                transform: translateY(-10px);
-            }
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://t3.ftcdn.net/jpg/02/14/53/92/360_F_214539232_YnUrtuwUEt84gHuU0qG8l7OwZvH4rnPG.jpg);
+            background-size: contain 100px;
+            background-position: center right;
+            background-repeat: no-repeat;
+        }
 
-        </style>
-        <script src="https://kit.fontawesome.com/80968458e3.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div id="header">
-            <div class="contain">
-                <nav>
-                    <img src="https://flamingtext.com/net-fu/proxy_form.cgi?script=birdy-logo&text=ANSH&_loc=generate&imageoutput=true" class="logo">
-                    <ul>
-                        <li><a href="#header">HOME </a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#Project">PROJECT</a></li>
-                        <li><a href="#Resume">RESUME</a></li>
-                        <li><a href="#Contact">CONTACT</a></li>
-                    </ul>
-                </nav>
-                <div class="header-txt">
-                    <p>WEB DEVELOPER</p>
-                    <H1>Hi, I'm <br> Ansh Sinha</H1>
+        .contain {
+            padding: 10PX 10%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center left;
+            justify-content: space-between;
+
+            position: fixed;
+            background-color: #000000;
+        }
+
+        .logo {
+            width: 150px;
+            position: left;
+        }
+
+        nav ul li {
+            display: inline-flex;
+            list-style: none;
+            margin: 20px 80px 20px;
+            align-items: right;
+
+
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        nav ul li a ::after {
+            content: '';
+            width: 0;
+            height: 5px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            transition: 1s;
+            bottom: -8px;
+        }
+
+        nav ul li a :hover ::after {
+            width: 100%;
+        }
+
+        .header-txt {
+            margin-top: 25%;
+            font-size: 30px;
+        }
+
+        .header-txt h1 {
+            font-size: 65px;
+            margin-top: 25px;
+            color: #ff004f;
+        }
+
+        #about {
+            padding: 80px 0;
+            color: #bababa;
+        }
+
+        .rows {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-col1 {
+            flex-basis: 40%;
+        }
+
+        .about-col1 img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .about-col2 {
+            flex-basis: 40%;
+        }
+
+        .subtitle {
+            font-size: 60px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .skills-tab {
+            margin: 20px 0 40px;
+            display: flex;
+        }
+
+        .s-tab {
+            font-size: 20px;
+            margin-right: 60px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .s-tab::after {
+            width: 0;
+            height: 3px;
+            content: '';
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .s-tab.s1-tab::after {
+            width: 60%;
+        }
+
+        .skill-contents ul li {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .skill-contents ul li span {
+            color: #ff004f;
+            font-size: 15px;
+        }
+
+        .skill-contents {
+            display: none;
+        }
+
+        .skill-contents.active-tab {
+            display: block;
+        }
+
+        /* PROJECT SECTION */
+        #Project {
+            padding: 30px 0;
+
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 60px;
+        }
+
+        .projects-list div {
+            background: #252525;
+            padding: 40px;
+            font-size: 15px;
+            font-weight: 400;
+            border-radius: 15px;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        .projects-list div i {
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+
+        .projects-list div h2 {
+            font-size: 30px;
+            font-weight: 450;
+            margin-bottom: 20px;
+        }
+
+        .projects-list div a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .projects-list div:hover {
+            background: #ff004f;
+            transform: translateY(-10px);
+        }
+
+        .resumebutton {
+            margin-left: 160px;
+            display: block;
+            font-size: 40px;
+        }
+
+        .resumebutton button {
+            background: #252525;
+            color: white;
+            padding: 40px;
+            font-size: 25px;
+            font-weight: 400;
+            border-radius: 15px;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        .resumebutton button:hover {
+            background: #4ac030d2;
+            transform: translateY(-10px);
+        }
+
+        /* CONTACT DETAILS*/
+        #Contact {
+            padding: 30px 0;
+
+        }
+
+        .Contact-list {
+            display: grid;
+            margin-left: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 60px;
+        }
+
+        .Contact-list div {
+            background: #252525;
+            padding: 20px;
+            font-size: 15px;
+            font-weight: 200;
+            border-radius: 15px;
+            transition: background 0.5s, transform 0.5s;
+        }
+
+        .Contact-list div i {
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+
+        .Contact-list div h2 {
+            font-size: 30px;
+            font-weight: 450;
+            margin-bottom: 10px;
+        }
+
+        .Contact-list div a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .Contact-list div:hover {
+            background: #ff004f;
+            transform: translateY(-10px);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/80968458e3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="contain">
+            <nav>
+                <img src="https://flamingtext.com/net-fu/proxy_form.cgi?script=birdy-logo&text=ANSH&_loc=generate&imageoutput=true"
+                    class="logo">
+                <ul>
+                    <li><a href="#header">HOME </a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#Project">PROJECT</a></li>
+                    <li><a href="#Resume">RESUME</a></li>
+                    <li><a href="#Contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="header-txt">
+                <p>WEB DEVELOPER</p>
+                <H1>Hi, I'm <br> Ansh Sinha</H1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="contain">
+            <div class="rows">
+                <div class="about-col1">
+                    <img src="C:\Users\Ansh Sinha\OneDrive\Pictures\ansh40.png">
                 </div>
-            </div>
-        </div>
-
-        <div id="about">
-            <div class="contain">
-                <div class="rows">
-                    <div class="about-col1">
-                        <img src="C:\Users\Ansh Sinha\OneDrive\Pictures\ansh.png.jpg">
+                <div class="about-col2">
+                    <h1 class="subtitle">About Me</h1><br>
+                    <p>A Passionate WEB Developer having an experience of<br>
+                        building creative and interesting web application using<br>
+                        JavaScript/CSS/HTML</p><br>
+                    <div class="skills-tab">
+                        <p class="s-tab s1-tab" onclick="opentab('SKILLS')">SKILLS</p>
+                        <p class="s-tab" onclick="opentab('EDUCATION')">EDUCATION</p>
                     </div>
-                    <div class="about-col2">
-                        <h1 class="subtitle">About Me</h1><br>
-                        <p>A Passionate WEB Developer having an experience of<br> 
-                            building creative and interesting web application using<br> 
-                            JavaScript/CSS/HTML</p><br>
-                        <div class="skills-tab">
-                            <p class="s-tab s1-tab" onclick="opentab('SKILLS')">SKILLS</p>
-                            <p class="s-tab" onclick="opentab('EDUCATION')">EDUCATION</p>
-                        </div>
-                        <div class="skill-contents active-tab" id="SKILLS"><br>
-                            <ul>
-                                <li><span>HTML</span><br>Creating web pages</li>
-                                <li><span>JAVASCRIPT</span><br>Making static webpage as an interactive one</li>
-                                <li><span>CSS</span><br>Styling webpage</li>
-                            </ul>
-                        </div>
-                        <div class="skill-contents" id="EDUCATION">
-                            <ul>
-                                <li><span>2019</span><br>X<sup>th</sup> PASS</li>
-                                <li><span>2021</span><br>XII<sup>th</sup> PASS</li>
-                            </ul>
-                        </div>
+                    <div class="skill-contents active-tab" id="SKILLS"><br>
+                        <ul>
+                            <li><span>HTML</span><br>Creating web pages</li>
+                            <li><span>JAVASCRIPT</span><br>Making static webpage as an interactive one</li>
+                            <li><span>CSS</span><br>Styling webpage</li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!----------project section---------->
-        <div id="Project">
-            <div class="contain">
-                <h1 class="subtitle">PROJECTS</h1>
-                <div class="projects-list">
-                    <div>
-                        <i class="fa-solid fa-hippo"></i>
-                        <h2>HTML</h2>
-                        
-                        <a href="#">Learn more</a>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-python"></i>
-                        <h2>PYTHON</h2>
-                        <p></p>
-                        <a href="#">Learn more</a>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-rocket"></i>
-                        <h2>JAVA</h2>
-                        <p></p>
-                        <a href="#">Learn more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!---------RESUME SECTION-------->
-        <div id="Resume">
-            <div class="contain">
-                <h1 class="subtitle">RESUME</h1>
-            </div>
-            <div class="resumebutton">
-                <button onclick="downloadResume()">Download Resume <i class="fa-solid fa-download"></i></button>
-                
-            </div>
-        </div>
-        <!---------CONTACT SECTION-->
-        <div id="Contact">
-            <div class="contain">
-                <h1 class="subtitle">CONTACT</h1>
-                <div class="Contact-list">
-                    <div>
-                        <h2>Email</h2>
-                        <a href="mailto:sinhaansh92@gmail.com" target="_blank" rel="noreferrer">sinhaansh92@gamil.com</a>
-                    </div>
-                    <div>
-                        <h2>Linkedin</h2>
-                        <a href="https://www.linkedin.com/in/ansh-sinha-b557aa243" target="_blank" rel="noreferrer">Ansh Sinha</a>
-                    </div>
-                    <div>
-                        <h2>GitHub</h2>
-                        <a href="https://github.com/ANSH-SINHA-03" target="_blank" rel="noreferrer">ANSH-SINHA-03</a>
-                    </div>
-                    <div>
-                        <h2>Instagram</h2>
-                        <a href="https://www.instagram.com/ansh._.sinha_/" target="_blank" rel="noreferrer">ツAnsh_Sinha</a>
+                    <div class="skill-contents" id="EDUCATION">
+                        <ul>
+                            <li><span>2019</span><br>X<sup>th</sup> PASS</li>
+                            <li><span>2021</span><br>XII<sup>th</sup> PASS</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <br><br><br>
-        <div class="footer">
-            <p>© 2023 Ansh Sinha. All Rights Reserved.</p>
+    </div>
+    <!----------project section---------->
+    <div id="Project">
+        <div class="contain">
+            <h1 class="subtitle">PROJECTS</h1>
+            <div class="projects-list">
+                <div>
+                    <i class="fa-solid fa-hippo"></i>
+                    <h2>HTML</h2>
+
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-python"></i>
+                    <h2>PYTHON</h2>
+                    <p></p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-rocket"></i>
+                    <h2>JAVA</h2>
+                    <p></p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
         </div>
-        
-        <script>
-            var skillstab = document.getElementsByClassName("s-tab");
-            var skillcontents = document.getElementsByClassName("skill-contents");
-            function opentab(skillname){
-                for(skillsstab of skillstab){
-                    skillsstab.classList.remove("s1-tab");
-                }
-                for(skillcontent of skillcontents){
-                    skillcontent.classList.remove("active-tab");
-                }
-                event.currentTarget.classList.add("s1-tab");
-                document.getElementById(skillname).classList.add("active-tab");
+    </div>
+    <!---------RESUME SECTION-------->
+    <div id="Resume">
+        <div class="contain">
+            <h1 class="subtitle">RESUME</h1>
+        </div>
+        <div class="resumebutton">
+            <button onclick="downloadResume()">Download Resume <i class="fa-solid fa-download"></i></button>
+
+        </div>
+    </div>
+    <!---------CONTACT SECTION-->
+    <div id="Contact">
+        <div class="contain">
+            <h1 class="subtitle">CONTACT</h1>
+            <div class="Contact-list">
+                <div>
+                    <h2>Email</h2>
+                    <a href="mailto:sinhaansh92@gmail.com" target="_blank" rel="noreferrer">sinhaansh92@gamil.com</a>
+                </div>
+                <div>
+                    <h2>Linkedin</h2>
+                    <a href="https://www.linkedin.com/in/ansh-sinha-b557aa243" target="_blank" rel="noreferrer">Ansh
+                        Sinha</a>
+                </div>
+                <div>
+                    <h2>GitHub</h2>
+                    <a href="https://github.com/ANSH-SINHA-03" target="_blank" rel="noreferrer">ANSH-SINHA-03</a>
+                </div>
+                <div>
+                    <h2>Instagram</h2>
+                    <a href="https://www.instagram.com/ansh._.sinha_/" target="_blank" rel="noreferrer">ツAnsh_Sinha</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="footer">
+        <p>© 2023 Ansh Sinha. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        var skillstab = document.getElementsByClassName("s-tab");
+        var skillcontents = document.getElementsByClassName("skill-contents");
+        function opentab(skillname) {
+            for (skillsstab of skillstab) {
+                skillsstab.classList.remove("s1-tab");
             }
-            function downloadResume(){
-                var resumeURL = '';
-                var link = document.createElement('a');
-                link.href = resumeURL;
-                link.download = 'Ansh_Sinha_resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+            for (skillcontent of skillcontents) {
+                skillcontent.classList.remove("active-tab");
             }
-        </script>
-    </body>
+            event.currentTarget.classList.add("s1-tab");
+            document.getElementById(skillname).classList.add("active-tab");
+        }
+        function downloadResume() {
+            var resumeURL = '';
+            var link = document.createElement('a');
+            link.href = resumeURL;
+            link.download = 'Ansh_Sinha_resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
 </html>
